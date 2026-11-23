@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musafir Cilik: 8 Adab, 1 Perjalanan Hebat!</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Fredoka (mesra kanak-kanak) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-sky: #E0F4FF;
+      --card-white: #FFFFFF;
+      --pastel-blue: #7BD3EA;
+      --pastel-mint: #A1EEBD;
+      --pastel-yellow: #F6F7C4;
+      --pastel-pink: #F6D6D6;
+      --pastel-orange: #FFBE98;
+      --text-dark: #1E293B;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-sky);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    h1, h2, h3, .font-kids {
+      font-family: 'Fredoka', cursive, sans-serif;
+    }
+
+    /* Animasi Latar & Watak */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes driveBounce {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-3px) rotate(0.5deg); }
+    }
+
+    @keyframes waveHand {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-18deg); }
+      75% { transform: rotate(15deg); }
+    }
+
+    @keyframes cloudDrift {
+      0% { transform: translateX(-20px); }
+      50% { transform: translateX(20px); }
+      100% { transform: translateX(-20px); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.85) translateY(15px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @keyframes pulseSoft {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    .anim-float { animation: floatSlow 3.5s ease-in-out infinite; }
+    .anim-car { animation: driveBounce 1.4s ease-in-out infinite; }
+    .anim-wave { transform-origin: 75% 75%; animation: waveHand 1.6s ease-in-out infinite; }
+    .anim-cloud { animation: cloudDrift 8s ease-in-out infinite; }
+    .anim-pop { animation: popIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .anim-pulse-btn { animation: pulseSoft 2s infinite; }
+
+    /* Gaya Kad & Butang 3D Kartun */
+    .cartoon-card {
+      background: #FFFFFF;
+      border: 4px solid #CBD5E1;
+      border-bottom-width: 9px;
+      border-radius: 28px;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .cartoon-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .cartoon-card:active {
+      transform: translateY(3px);
+      border-bottom-width: 4px;
+    }
+
+    .cartoon-btn {
+      border-bottom-width: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .cartoon-btn:active {
+      transform: translateY(3px);
+      border-bottom-width: 2px;
+    }
+
+    /* Latar Belakang Pemandangan Kartun */
+    .scenery-bg {
+      background: linear-gradient(180deg, #CBEBFF 0%, #EAF7FF 65%, #C6F6D5 65%, #9AE6B4 100%);
+    }
+
+    /* Scrollbar lembut */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #E0F4FF; }
+    ::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 10px; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col scenery-bg">
+
+  <!-- BAR ATAS: Tajuk Ringkas, Penunjuk Kemajuan & Kawalan Muzik -->
+  <header id="top-header" class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b-4 border-sky-200 px-3 py-2.5 sm:px-6 shadow-sm">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <!-- Lencana Tajuk & Subjek -->
+      <div class="flex items-center gap-2.5">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-amber-300 border-2 border-amber-500 flex items-center justify-center text-xl shadow-sm">
+          🚐
+        </div>
+        <div>
+          <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-sky-700 bg-sky-100 px-2 py-0.5 rounded-full">
+            Pendidikan Islam Tahun 5 • Ibadah
+          </span>
+          <h1 class="font-kids text-base sm:text-xl font-bold text-slate-800 leading-tight">
+            Musafir Cilik: 8 Adab, 1 Perjalanan Hebat!
+          </h1>
+        </div>
+      </div>
+
+      <!-- Kawalan Audio Latar & Menu -->
+      <div class="flex items-center gap-2">
+        <button id="btn-bgm" onclick="toggleBGM()" aria-label="Kawal Muzik Latar"
+          class="cartoon-btn flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-amber-100 hover:bg-amber-200 border-2 border-amber-400 text-amber-900 font-bold text-xs sm:text-sm">
+          <span id="bgm-icon">🔇</span>
+          <span id="bgm-label" class="hidden sm:inline">Muzik: Tutup</span>
+        </button>
+
+        <button id="btn-home-top" onclick="goToPage(0)"
+          class="cartoon-btn hidden items-center gap-1.5 px-3 py-2 rounded-2xl bg-sky-100 hover:bg-sky-200 border-2 border-sky-400 text-sky-900 font-bold text-xs sm:text-sm">
+          <span>🏠</span>
+          <span class="hidden sm:inline">Menu Utama</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Penunjuk Bahagian & Progress Bar (Tersembunyi di Halaman Pengenalan) -->
+    <div id="progress-container" class="max-w-5xl mx-auto mt-2.5 hidden">
+      <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-slate-700 mb-1">
+        <span id="section-indicator" class="bg-emerald-100 text-emerald-800 px-3 py-0.5 rounded-full border border-emerald-300">
+          Bahagian 1 daripada 3
+        </span>
+        <span id="explored-counter" class="text-sky-800 bg-white px-3 py-0.5 rounded-full border border-sky-200">
+          Diterokai: 0 / 8
+        </span>
+      </div>
+      <div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden border border-slate-300">
+        <div id="progress-bar" class="h-full bg-gradient-to-r from-sky-400 via-emerald-400 to-amber-400 transition-all duration-500 rounded-full" style="width: 33%;"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- KANDUNGAN UTAMA -->
+  <main class="flex-grow flex flex-col items-center justify-center p-4 sm:p-6 max-w-5xl w-full mx-auto relative">
+
+    <!-- ==================== HALAMAN 0: PENGENALAN ==================== -->
+    <section id="page-0" class="w-full flex flex-col items-center text-center anim-pop">
+      <!-- Awan Hiasan Terapung -->
+      <div class="w-full flex justify-between px-4 pointer-events-none opacity-80 -mb-4">
+        <svg class="w-20 h-12 anim-cloud" viewBox="0 0 100 60">
+          <path d="M25,50 L75,50 C88,50 95,40 90,30 C87,22 78,20 72,22 C68,10 52,6 42,14 C34,12 24,18 24,26 C14,27 8,36 12,44 C15,48 20,50 25,50 Z" fill="#FFFFFF"/>
+        </svg>
+        <svg class="w-24 h-14 anim-cloud" style="animation-delay: 2s;" viewBox="0 0 100 60">
+          <path d="M25,50 L75,50 C88,50 95,40 90,30 C87,22 78,20 72,22 C68,10 52,6 42,14 C34,12 24,18 24,26 C14,27 8,36 12,44 C15,48 20,50 25,50 Z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+
+      <div class="bg-white/95 border-4 border-sky-300 border-b-8 rounded-[36px] p-5 sm:p-8 shadow-xl max-w-3xl w-full">
+        <div class="inline-block bg-amber-200 border-2 border-amber-400 text-amber-900 font-kids font-bold px-4 py-1 rounded-full text-sm sm:text-base mb-3">
+          ✨ Nota Pembelajaran Interaktif ✨
+        </div>
+
+        <h2 class="font-kids text-3xl sm:text-5xl font-bold text-sky-700 tracking-wide drop-shadow-sm mb-4">
+          JOM JADI MUSAFIR CILIK!
+        </h2>
+
+        <!-- Ilustrasi Animasi 2D Kartun Keluarga Muslim & Kereta -->
+        <div class="w-full max-w-lg mx-auto my-2 bg-gradient-to-b from-sky-100 to-emerald-100 rounded-3xl p-4 border-4 border-sky-200 overflow-hidden">
+          <svg viewBox="0 0 500 230" class="w-full h-auto">
+            <!-- Matahari Ceria -->
+            <circle cx="435" cy="45" r="24" fill="#FDE047" stroke="#F59E0B" stroke-width="3"/>
+            <!-- Jalan Raya -->
+            <rect x="0" y="185" width="500" height="45" fill="#475569" rx="8"/>
+            <line x1="20" y1="207" x2="70" y2="207" stroke="#F8FAFC" stroke-width="5" stroke-dasharray="18 14"/>
+            <line x1="120" y1="207" x2="220" y2="207" stroke="#F8FAFC" stroke-width="5" stroke-dasharray="18 14"/>
+            <line x1="270" y1="207" x2="370" y2="207" stroke="#F8FAFC" stroke-width="5" stroke-dasharray="18 14"/>
+            <line x1="410" y1="207" x2="480" y2="207" stroke="#F8FAFC" stroke-width="5" stroke-dasharray="18 14"/>
+
+            <!-- Kereta Keluarga Comel -->
+            <g class="anim-car">
+              <!-- Badan Kereta -->
+              <path d="M55,145 L75,95 C80,84 92,78 105,78 L185,78 C198,78 210,85 215,96 L235,145 Z" fill="#38BDF8" stroke="#0284C7" stroke-width="4"/>
+              <rect x="35" y="135" width="225" height="45" rx="20" fill="#0EA5E9" stroke="#0369A1" stroke-width="4"/>
+              <!-- Tingkap Kereta -->
+              <path d="M84,132 L98,94 L142,94 L142,132 Z" fill="#E0F2FE" stroke="#0284C7" stroke-width="3"/>
+              <path d="M152,132 L152,94 L194,94 L208,132 Z" fill="#E0F2FE" stroke="#0284C7" stroke-width="3"/>
+              <!-- Lampu -->
+              <circle cx="252" cy="153" r="8" fill="#FEF08A" stroke="#EAB308" stroke-width="2"/>
+              <rect x="38" y="148" width="10" height="14" rx="4" fill="#F87171"/>
+              <!-- Tayar -->
+              <circle cx="88" cy="180" r="22" fill="#1E293B" stroke="#0F172A" stroke-width="3"/>
+              <circle cx="88" cy="180" r="10" fill="#CBD5E1"/>
+              <circle cx="208" cy="180" r="22" fill="#1E293B" stroke="#0F172A" stroke-width="3"/>
+              <circle cx="208" cy="180" r="10" fill="#CBD5E1"/>
+            </g>
+
+            <!-- Ayah (Berkopiah Putih & Baju Melayu Hijau Mint) -->
+            <g transform="translate(275, 78)">
+              <rect x="14" y="54" width="32" height="52" rx="12" fill="#34D399" stroke="#059669" stroke-width="3"/>
+              <circle cx="30" cy="32" r="20" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+              <!-- Kopiah -->
+              <path d="M13,22 C13,10 47,10 47,22 Z" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+              <!-- Mata & Senyum -->
+              <circle cx="24" cy="30" r="2.5" fill="#1E293B"/>
+              <circle cx="36" cy="30" r="2.5" fill="#1E293B"/>
+              <path d="M24,38 Q30,44 36,38" fill="none" stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"/>
+            </g>
+
+            <!-- Ibu (Bertudung Merah Jambu Lembut) -->
+            <g transform="translate(332, 84)">
+              <path d="M8,32 C8,10 52,10 52,32 L56,88 L4,88 Z" fill="#F472B6" stroke="#DB2777" stroke-width="3"/>
+              <circle cx="30" cy="32" r="17" fill="#FDE68A" stroke="#D97706" stroke-width="2"/>
+              <circle cx="25" cy="30" r="2.3" fill="#1E293B"/>
+              <circle cx="35" cy="30" r="2.3" fill="#1E293B"/>
+              <path d="M25,37 Q30,42 35,37" fill="none" stroke="#1E293B" stroke-width="2.2" stroke-linecap="round"/>
+            </g>
+
+            <!-- Kanak-kanak Lelaki Melambai (Musafir Cilik) -->
+            <g transform="translate(390, 108)">
+              <rect x="12" y="42" width="26" height="40" rx="10" fill="#FBBF24" stroke="#D97706" stroke-width="3"/>
+              <!-- Tangan Melambai -->
+              <g class="anim-wave">
+                <path d="M38,48 L54,28" stroke="#FDE68A" stroke-width="8" stroke-linecap="round"/>
+                <circle cx="55" cy="26" r="5" fill="#FDE68A"/>
+              </g>
+              <circle cx="25" cy="24" r="17" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+              <!-- Kopiah Kecil -->
+              <path d="M11,15 C11,6 39,6 39,15 Z" fill="#38BDF8" stroke="#0284C7" stroke-width="2"/>
+              <circle cx="20" cy="23" r="2.3" fill="#1E293B"/>
+              <circle cx="30" cy="23" r="2.3" fill="#1E293B"/>
+              <path d="M20,30 Q25,36 30,30" fill="none" stroke="#1E293B" stroke-width="2.3" stroke-linecap="round"/>
+            </g>
+
+            <!-- Beg Perjalanan -->
+            <g transform="translate(450, 152)">
+              <rect x="0" y="8" width="26" height="28" rx="6" fill="#FB923C" stroke="#C2410C" stroke-width="2.5"/>
+              <path d="M7,8 L7,2 L19,2 L19,8" fill="none" stroke="#C2410C" stroke-width="3"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Arahan Mudah -->
+        <p class="text-lg sm:text-2xl font-bold text-slate-700 mt-4 mb-6 leading-snug">
+          Jom belajar adab menaiki kenderaan! <br class="hidden sm:inline">
+          <span class="text-sky-700">Tekan gambar dan terokai setiap nota.</span>
+        </p>
+
+        <!-- Butang Besar JOM MULA! -->
+        <button onclick="startLearning()"
+          class="cartoon-btn anim-pulse-btn bg-emerald-400 hover:bg-emerald-500 border-4 border-emerald-600 text-slate-900 font-kids text-2xl sm:text-3xl font-bold px-10 py-4 rounded-3xl shadow-lg inline-flex items-center gap-3 cursor-pointer">
+          <span>🚀</span>
+          <span>JOM MULA!</span>
+        </button>
+
+        <!-- Pintasan Pantas ke 3 Bahagian -->
+        <div class="mt-6 pt-4 border-t-2 border-slate-100 flex flex-wrap justify-center gap-2">
+          <button onclick="goToPage(1)" class="text-xs sm:text-sm font-bold px-3.5 py-2 rounded-2xl bg-sky-100 hover:bg-sky-200 text-sky-900 border border-sky-300">
+            1️⃣ 8 Adab Kenderaan
+          </button>
+          <button onclick="goToPage(2)" class="text-xs sm:text-sm font-bold px-3.5 py-2 rounded-2xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300">
+            2️⃣ 4 Kelebihan Beradab
+          </button>
+          <button onclick="goToPage(3)" class="text-xs sm:text-sm font-bold px-3.5 py-2 rounded-2xl bg-rose-100 hover:bg-rose-200 text-rose-900 border border-rose-300">
+            3️⃣ 5 Akibat Tidak Beradab
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== HALAMAN 1: 8 ADAB MENAIKI KENDERAAN ==================== -->
+    <section id="page-1" class="w-full hidden flex-col items-center anim-pop">
+      <div class="text-center mb-5 bg-white/90 px-6 py-3.5 rounded-3xl border-4 border-sky-300 shadow-sm max-w-2xl w-full">
+        <span class="inline-block bg-sky-200 text-sky-900 font-bold text-xs sm:text-sm px-3 py-0.5 rounded-full mb-1">
+          BAHAGIAN 1
+        </span>
+        <h2 class="font-kids text-2xl sm:text-4xl font-bold text-sky-800">
+          8 Adab Menaiki Kenderaan
+        </h2>
+        <p class="text-sm sm:text-base font-semibold text-slate-600 mt-1">
+          👆 Tekan setiap gambar ikon di bawah untuk belajar!
+        </p>
+      </div>
+
+      <!-- Grid 8 Ikon Kartun (Penerangan tersembunyi sehingga ditekan) -->
+      <div id="grid-adab" class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-5 w-full"></div>
+    </section>
+
+    <!-- ==================== HALAMAN 2: KELEBIHAN MENGAMALKAN ADAB ==================== -->
+    <section id="page-2" class="w-full hidden flex-col items-center anim-pop">
+      <div class="text-center mb-5 bg-white/90 px-6 py-3.5 rounded-3xl border-4 border-emerald-300 shadow-sm max-w-2xl w-full">
+        <span class="inline-block bg-emerald-200 text-emerald-900 font-bold text-xs sm:text-sm px-3 py-0.5 rounded-full mb-1">
+          BAHAGIAN 2
+        </span>
+        <h2 class="font-kids text-2xl sm:text-4xl font-bold text-emerald-800">
+          4 Kelebihan Mengamalkan Adab
+        </h2>
+        <p class="text-sm sm:text-base font-semibold text-slate-600 mt-1">
+          👆 Tekan gambar untuk lihat kebaikan beradab!
+        </p>
+      </div>
+
+      <!-- Grid 4 Ikon Kelebihan -->
+      <div id="grid-kelebihan" class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-3xl"></div>
+    </section>
+
+    <!-- ==================== HALAMAN 3: AKIBAT TIDAK MENGAMALKAN ADAB ==================== -->
+    <section id="page-3" class="w-full hidden flex-col items-center anim-pop">
+      <div class="text-center mb-5 bg-white/90 px-6 py-3.5 rounded-3xl border-4 border-orange-300 shadow-sm max-w-2xl w-full">
+        <span class="inline-block bg-orange-200 text-orange-900 font-bold text-xs sm:text-sm px-3 py-0.5 rounded-full mb-1">
+          BAHAGIAN 3
+        </span>
+        <h2 class="font-kids text-2xl sm:text-4xl font-bold text-orange-800">
+          5 Akibat Tidak Mengamalkan Adab
+        </h2>
+        <p class="text-sm sm:text-base font-semibold text-slate-600 mt-1">
+          👆 Tekan gambar untuk lihat apa yang berlaku jika tiada adab!
+        </p>
+      </div>
+
+      <!-- Grid 5 Ikon Akibat -->
+      <div id="grid-akibat" class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 sm:gap-5 w-full max-w-4xl"></div>
+    </section>
+
+    <!-- PENUTUP TAHNIAH (Muncul di Bahagian 3 jika semua diterokai atau sebagai rumusan ringkas) -->
+    <div id="completion-banner" class="hidden mt-6 bg-amber-100 border-4 border-amber-400 rounded-3xl p-4 text-center max-w-xl w-full shadow-md anim-pop">
+      <p class="font-kids text-xl sm:text-2xl font-bold text-amber-900">
+        🌟 Hebat! Kamu sudah menerokai semua nota ini! 🌟
+      </p>
+    </div>
+
+  </main>
+
+  <!-- BAR NAVIGASI BAWAH -->
+  <footer id="bottom-nav" class="hidden sticky bottom-0 z-20 bg-white/95 backdrop-blur-md border-t-4 border-sky-200 px-4 py-3 shadow-lg">
+    <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
+      <button id="btn-prev" onclick="prevPage()"
+        class="cartoon-btn flex-1 sm:flex-initial flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-amber-200 hover:bg-amber-300 border-2 border-amber-500 text-amber-950 font-kids font-bold text-base sm:text-lg">
+        <span>⬅️</span>
+        <span>Kembali</span>
+      </button>
+
+      <button onclick="goToPage(0)"
+        class="cartoon-btn flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 border-2 border-slate-400 text-slate-800 font-kids font-bold text-base sm:text-lg">
+        <span>🏠</span>
+        <span class="hidden sm:inline">Menu Utama</span>
+      </button>
+
+      <button id="btn-next" onclick="nextPage()"
+        class="cartoon-btn flex-1 sm:flex-initial flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-emerald-400 hover:bg-emerald-500 border-2 border-emerald-600 text-slate-900 font-kids font-bold text-base sm:text-lg">
+        <span id="btn-next-label">Seterusnya</span>
+        <span>➡️</span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL POP-UP KAD NOTA ==================== -->
+  <div id="note-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4" onclick="closeModalOnBackdrop(event)">
+    <div id="modal-card" class="bg-white border-4 border-sky-400 border-b-8 rounded-[34px] max-w-lg w-full p-5 sm:p-7 text-center shadow-2xl anim-pop relative">
+      
+      <!-- Lencana Nombor & Kategori -->
+      <div class="flex items-center justify-between mb-3">
+        <span id="modal-badge" class="font-kids font-bold text-sm sm:text-base px-4 py-1 rounded-full bg-sky-100 text-sky-900 border-2 border-sky-300">
+          ADAB 1
+        </span>
+        <span id="modal-audio-status" class="text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 flex items-center gap-1.5">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+          <span>Sedang Membaca...</span>
+        </span>
+      </div>
+
+      <!-- Tajuk Besar -->
+      <h3 id="modal-title" class="font-kids text-2xl sm:text-3xl font-bold text-slate-800 mb-3 leading-tight">
+        MERANCANG PERJALANAN
+      </h3>
+
+      <!-- Ilustrasi Besar Kad -->
+      <div id="modal-visual" class="w-full h-52 sm:h-60 bg-gradient-to-b from-sky-50 to-amber-50 rounded-3xl border-4 border-slate-200 flex items-center justify-center p-3 mb-5 overflow-hidden">
+        <!-- SVG disuntik oleh JS -->
+      </div>
+
+      <!-- Amaran Jika Autoplay Disekat Pelayar -->
+      <div id="autoplay-notice" class="hidden mb-3 bg-rose-100 border-2 border-rose-300 text-rose-900 text-xs sm:text-sm font-bold px-3 py-2 rounded-xl">
+        🔊 Tekan butang <strong>"Dengar Semula"</strong> untuk mendengar penerangan audio.
+      </div>
+
+      <!-- Butang Kawalan Audio & Tutup -->
+      <div class="flex items-center justify-center gap-3">
+        <button id="btn-replay" onclick="replayCurrentAudio()"
+          class="cartoon-btn flex-1 bg-amber-300 hover:bg-amber-400 border-2 border-amber-500 text-amber-950 font-kids font-bold text-lg sm:text-xl py-3 px-4 rounded-2xl flex items-center justify-center gap-2 cursor-pointer">
+          <span>🔊</span>
+          <span>Dengar Semula</span>
+        </button>
+
+        <button onclick="closeModal()"
+          class="cartoon-btn flex-1 bg-rose-400 hover:bg-rose-500 border-2 border-rose-600 text-white font-kids font-bold text-lg sm:text-xl py-3 px-4 rounded-2xl flex items-center justify-center gap-2 cursor-pointer">
+          <span>✖️</span>
+          <span>Tutup</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAKLUM BALAS POSITIF TERAPUNG (TOAST) -->
+  <div id="positive-toast" class="fixed top-20 left-1/2 -translate-x-1/2 z-40 hidden bg-emerald-500 text-white font-kids font-bold text-base sm:text-lg px-5 py-2.5 rounded-full shadow-xl border-2 border-white">
+    ⭐ Bagus! Teruskan meneroka!
+  </div>
+
+  <script>
+    /* =========================================================================
+       DATA KANDUNGAN NOTA PEMBELAJARAN (3 BAHAGIAN UTAMA)
+       ========================================================================= */
+
+    // Koleksi Ilustrasi SVG 2D Kartun Comel & Jelas
+    const SVG_ART = {
+      // --- BAHAGIAN 1: 8 ADAB ---
+      adab1_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <rect x="14" y="26" width="66" height="54" rx="8" fill="#BAE6FD" stroke="#0284C7" stroke-width="4"/>
+        <path d="M36,26 L36,80 M58,26 L58,80" stroke="#0284C7" stroke-width="3"/>
+        <path d="M22,62 Q40,42 52,55 T72,38" fill="none" stroke="#EF4444" stroke-width="4" stroke-dasharray="5 4"/>
+        <circle cx="72" cy="36" r="6" fill="#EF4444"/>
+        <rect x="64" y="54" width="42" height="46" rx="10" fill="#FB923C" stroke="#C2410C" stroke-width="4"/>
+        <path d="M76,54 L76,44 L94,44 L94,54" fill="none" stroke="#C2410C" stroke-width="4"/>
+      </svg>`,
+      adab1_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Ayah & Anak Melihat Peta -->
+        <circle cx="105" cy="52" r="22" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <path d="M86,42 C86,26 124,26 124,42 Z" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2.5"/>
+        <circle cx="99" cy="50" r="2.5" fill="#1E293B"/><circle cx="111" cy="50" r="2.5" fill="#1E293B"/>
+        <path d="M99,59 Q105,64 111,59" fill="none" stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="85" y="76" width="40" height="65" rx="12" fill="#34D399" stroke="#059669" stroke-width="3"/>
+        <!-- Kanak-kanak -->
+        <circle cx="215" cy="68" r="19" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <path d="M198,58 C198,46 232,46 232,58 Z" fill="#38BDF8" stroke="#0284C7" stroke-width="2"/>
+        <circle cx="209" cy="66" r="2.5" fill="#1E293B"/><circle cx="221" cy="66" r="2.5" fill="#1E293B"/>
+        <path d="M209,74 Q215,80 221,74" fill="none" stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="198" y="88" width="34" height="52" rx="10" fill="#FBBF24" stroke="#D97706" stroke-width="3"/>
+        <!-- Peta Besar di Tengah -->
+        <polygon points="118,86 160,78 202,86 202,146 160,138 118,146" fill="#E0F2FE" stroke="#0284C7" stroke-width="3.5"/>
+        <line x1="160" y1="78" x2="160" y2="138" stroke="#0284C7" stroke-width="2.5"/>
+        <path d="M130,126 Q155,102 186,98" fill="none" stroke="#EF4444" stroke-width="4" stroke-dasharray="6 4"/>
+        <circle cx="188" cy="96" r="6" fill="#EF4444"/>
+      </svg>`,
+
+      adab2_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <rect x="12" y="24" width="96" height="72" rx="22" fill="#FEF08A" stroke="#EAB308" stroke-width="4"/>
+        <text x="60" y="58" text-anchor="middle" font-size="24" font-weight="bold" fill="#065F46" font-family="serif">بِسْمِ اللَّهِ</text>
+        <text x="60" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400E" font-family="sans-serif">BISMILLAH</text>
+      </svg>`,
+      adab2_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Buih Kata Bismillah -->
+        <rect x="35" y="14" width="150" height="54" rx="18" fill="#FFFFFF" stroke="#10B981" stroke-width="3.5"/>
+        <text x="110" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#047857">بِسْمِ اللَّهِ</text>
+        <text x="110" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#065F46">"Bismillahirrahmanirrahim"</text>
+        <!-- Kanak-kanak Tersenyum di sebelah Kereta -->
+        <circle cx="110" cy="100" r="20" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <path d="M92,90 C92,78 128,78 128,90 Z" fill="#38BDF8" stroke="#0284C7" stroke-width="2"/>
+        <circle cx="104" cy="98" r="2.5" fill="#1E293B"/><circle cx="116" cy="98" r="2.5" fill="#1E293B"/>
+        <path d="M104,107 Q110,113 116,107" fill="none" stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="92" y="122" width="36" height="45" rx="10" fill="#FBBF24" stroke="#D97706" stroke-width="3"/>
+        <!-- Kereta -->
+        <rect x="175" y="95" width="120" height="55" rx="16" fill="#38BDF8" stroke="#0284C7" stroke-width="3.5"/>
+        <rect x="190" y="68" width="85" height="35" rx="12" fill="#BAE6FD" stroke="#0284C7" stroke-width="3.5"/>
+        <circle cx="205" cy="152" r="14" fill="#1E293B"/><circle cx="268" cy="152" r="14" fill="#1E293B"/>
+      </svg>`,
+
+      adab3_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <!-- Tapak Kaki Kiri (Pudar) -->
+        <ellipse cx="40" cy="66" rx="13" ry="24" fill="#CBD5E1" stroke="#64748B" stroke-width="3"/>
+        <circle cx="32" cy="36" r="4" fill="#94A3B8"/><circle cx="41" cy="34" r="3.5" fill="#94A3B8"/><circle cx="49" cy="37" r="3" fill="#94A3B8"/>
+        <!-- Tapak Kaki Kanan (Diserlahkan Hijau & Bintang) -->
+        <ellipse cx="78" cy="56" rx="15" ry="27" fill="#34D399" stroke="#059669" stroke-width="4"/>
+        <circle cx="69" cy="24" r="4.5" fill="#059669"/><circle cx="79" cy="22" r="4" fill="#059669"/><circle cx="88" cy="25" r="3.5" fill="#059669"/>
+        <text x="78" y="62" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">KANAN</text>
+      </svg>`,
+      adab3_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Pintu Kereta Terbuka -->
+        <rect x="165" y="35" width="125" height="120" rx="18" fill="#38BDF8" stroke="#0284C7" stroke-width="4"/>
+        <rect x="180" y="50" width="90" height="85" rx="12" fill="#E0F2FE" stroke="#0284C7" stroke-width="3"/>
+        <!-- Kanak-kanak Melangkah Kaki Kanan -->
+        <circle cx="110" cy="55" r="19" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <path d="M93,45 C93,33 127,33 127,45 Z" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+        <circle cx="105" cy="53" r="2.5" fill="#1E293B"/><circle cx="116" cy="53" r="2.5" fill="#1E293B"/>
+        <path d="M105,61 Q110,66 116,61" fill="none" stroke="#1E293B" stroke-width="2.5"/>
+        <rect x="94" y="76" width="32" height="44" rx="10" fill="#FBBF24" stroke="#D97706" stroke-width="3"/>
+        <!-- Kaki Kiri di tanah -->
+        <path d="M102,120 L95,156" stroke="#1E293B" stroke-width="9" stroke-linecap="round"/>
+        <!-- Kaki Kanan Melangkah Masuk (Hijau Terang) -->
+        <path d="M118,120 L165,124" stroke="#10B981" stroke-width="10" stroke-linecap="round"/>
+        <ellipse cx="172" cy="124" rx="12" ry="7" fill="#059669"/>
+        <rect x="135" y="88" width="66" height="24" rx="8" fill="#A7F3D0" stroke="#059669" stroke-width="2"/>
+        <text x="168" y="104" text-anchor="middle" font-size="11" font-weight="bold" fill="#065F46">KAKI KANAN</text>
+      </svg>`,
+
+      adab4_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#DDD6FE" stroke="#7C3AED" stroke-width="4"/>
+        <!-- Dua Tapak Tangan Menadah Doa -->
+        <path d="M58,84 C42,84 34,70 36,48 C37,42 44,42 45,48 L47,66 L58,66 Z" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <path d="M62,84 C78,84 86,70 84,48 C83,42 76,42 75,48 L73,66 L62,66 Z" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <text x="60" y="34" text-anchor="middle" font-size="18">✨🤲✨</text>
+      </svg>`,
+      adab4_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Kanak-kanak di dalam kereta menadah tangan berdoa -->
+        <rect x="45" y="35" width="230" height="125" rx="24" fill="#E0F2FE" stroke="#0284C7" stroke-width="4"/>
+        <circle cx="160" cy="68" r="24" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <path d="M138,56 C138,40 182,40 182,56 Z" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2.5"/>
+        <circle cx="152" cy="66" r="2.8" fill="#1E293B"/><circle cx="168" cy="66" r="2.8" fill="#1E293B"/>
+        <path d="M153,76 Q160,82 167,76" fill="none" stroke="#1E293B" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="135" y="94" width="50" height="55" rx="14" fill="#34D399" stroke="#059669" stroke-width="3"/>
+        <!-- Tangan Menadah Doa -->
+        <ellipse cx="148" cy="112" rx="10" ry="14" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+        <ellipse cx="172" cy="112" rx="10" ry="14" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+        <!-- Buih Doa -->
+        <rect x="200" y="45" width="66" height="44" rx="12" fill="#FEF9C3" stroke="#EAB308" stroke-width="2.5"/>
+        <text x="233" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#854D0E">سُبْحَانَ الَّذِي</text>
+        <text x="233" y="81" text-anchor="middle" font-size="11" font-weight="bold" fill="#854D0E">Doa Musafir</text>
+      </svg>`,
+
+      adab5_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <rect x="22" y="18" width="76" height="84" rx="18" fill="#FED7AA" stroke="#EA580C" stroke-width="4"/>
+        <!-- Tali Pinggang Keledar -->
+        <line x1="30" y1="24" x2="90" y2="94" stroke="#1E293B" stroke-width="14" stroke-linecap="round"/>
+        <rect x="46" y="46" width="28" height="26" rx="6" fill="#EF4444" stroke="#991B1B" stroke-width="3"/>
+        <rect x="53" y="53" width="14" height="12" rx="2" fill="#F8FAFC"/>
+      </svg>`,
+      adab5_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Kerusi Kereta -->
+        <rect x="110" y="25" width="100" height="135" rx="22" fill="#94A3B8" stroke="#475569" stroke-width="4"/>
+        <!-- Kanak-kanak Duduk Kemas -->
+        <circle cx="160" cy="62" r="22" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <circle cx="153" cy="60" r="2.5" fill="#1E293B"/><circle cx="167" cy="60" r="2.5" fill="#1E293B"/>
+        <path d="M153,69 Q160,75 167,69" fill="none" stroke="#1E293B" stroke-width="2.5"/>
+        <rect x="134" y="86" width="52" height="62" rx="14" fill="#38BDF8" stroke="#0284C7" stroke-width="3"/>
+        <!-- Tali Pinggang Keledar Melintang -->
+        <line x1="136" y1="88" x2="184" y2="144" stroke="#1E293B" stroke-width="10" stroke-linecap="round"/>
+        <rect x="152" y="108" width="18" height="16" rx="4" fill="#EF4444"/>
+        <text x="255" y="80" text-anchor="middle" font-size="28">✅</text>
+        <text x="255" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#065F46">SELAMAT!</text>
+      </svg>`,
+
+      adab6_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#FBCFE8" stroke="#DB2777" stroke-width="4"/>
+        <!-- Warga Emas & Tongkat -->
+        <circle cx="54" cy="44" r="14" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+        <path d="M40,42 C40,30 68,30 68,42" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+        <rect x="42" y="60" width="24" height="34" rx="8" fill="#A78BFA" stroke="#6D28D9" stroke-width="2.5"/>
+        <path d="M76,58 L76,94 M76,58 Q83,54 83,61" fill="none" stroke="#92400E" stroke-width="4" stroke-linecap="round"/>
+        <text x="86" y="38" font-size="20">💖</text>
+      </svg>`,
+      adab6_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Tempat Duduk Bas -->
+        <rect x="55" y="65" width="65" height="85" rx="14" fill="#60A5FA" stroke="#1D4ED8" stroke-width="3.5"/>
+        <!-- Datuk Duduk -->
+        <circle cx="90" cy="56" r="18" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+        <path d="M74,52 C74,38 106,38 106,52" fill="none" stroke="#F8FAFC" stroke-width="6"/>
+        <rect x="75" y="76" width="32" height="48" rx="10" fill="#A78BFA" stroke="#6D28D9" stroke-width="2.5"/>
+        <!-- Kanak-kanak Berdiri Mempelawa -->
+        <circle cx="195" cy="66" r="19" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+        <path d="M178,56 C178,44 212,44 212,56 Z" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+        <circle cx="189" cy="64" r="2.3" fill="#1E293B"/><circle cx="201" cy="64" r="2.3" fill="#1E293B"/>
+        <path d="M189,72 Q195,78 201,72" fill="none" stroke="#1E293B" stroke-width="2.3"/>
+        <rect x="179" y="88" width="32" height="58" rx="10" fill="#34D399" stroke="#059669" stroke-width="3"/>
+        <path d="M179,98 L145,88" stroke="#FDE68A" stroke-width="8" stroke-linecap="round"/>
+        <text x="142" y="45" font-size="24">💖</text>
+      </svg>`,
+
+      adab7_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#BBF7D0" stroke="#16A34A" stroke-width="4"/>
+        <!-- Tong Sampah Comel -->
+        <polygon points="40,48 80,48 74,94 46,94" fill="#22C55E" stroke="#15803D" stroke-width="3.5"/>
+        <rect x="35" y="38" width="50" height="10" rx="4" fill="#16A34A"/>
+        <text x="60" y="76" text-anchor="middle" font-size="18">♻️</text>
+      </svg>`,
+      adab7_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Kanak-kanak Buang Sampah ke Tong -->
+        <circle cx="115" cy="62" r="20" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <path d="M95,58 C95,38 135,38 135,58 L138,95 L92,95 Z" fill="#F472B6" stroke="#DB2777" stroke-width="2.5"/>
+        <circle cx="109" cy="60" r="2.5" fill="#1E293B"/><circle cx="121" cy="60" r="2.5" fill="#1E293B"/>
+        <path d="M109,69 Q115,75 121,69" fill="none" stroke="#1E293B" stroke-width="2.5"/>
+        <!-- Tangan membuang kertas -->
+        <path d="M135,96 L175,86" stroke="#FDE68A" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="184" cy="92" r="7" fill="#FFFFFF" stroke="#64748B" stroke-width="2"/>
+        <!-- Tong Sampah -->
+        <polygon points="172,106 222,106 215,158 179,158" fill="#22C55E" stroke="#15803D" stroke-width="3.5"/>
+        <rect x="167" y="96" width="60" height="10" rx="4" fill="#16A34A"/>
+        <text x="258" y="85" font-size="26">✨</text>
+      </svg>`,
+
+      adab8_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#BAE6FD" stroke="#0284C7" stroke-width="4"/>
+        <!-- 3 Orang Beratur Tertib -->
+        <circle cx="38" cy="48" r="10" fill="#FDE68A" stroke="#D97706" stroke-width="2"/>
+        <rect x="30" y="60" width="16" height="28" rx="6" fill="#F87171"/>
+        <circle cx="60" cy="48" r="10" fill="#FDE68A" stroke="#D97706" stroke-width="2"/>
+        <rect x="52" y="60" width="16" height="28" rx="6" fill="#34D399"/>
+        <circle cx="82" cy="48" r="10" fill="#FDE68A" stroke="#D97706" stroke-width="2"/>
+        <rect x="74" y="60" width="16" height="28" rx="6" fill="#FBBF24"/>
+      </svg>`,
+      adab8_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Bas Kuning Comel -->
+        <rect x="200" y="42" width="105" height="105" rx="18" fill="#FACC15" stroke="#CA8A04" stroke-width="4"/>
+        <rect x="215" y="58" width="42" height="35" rx="8" fill="#E0F2FE" stroke="#CA8A04" stroke-width="2.5"/>
+        <rect x="265" y="58" width="28" height="85" rx="6" fill="#FEF08A" stroke="#CA8A04" stroke-width="2.5"/>
+        <circle cx="225" cy="148" r="14" fill="#1E293B"/>
+        <!-- Murid Beratur -->
+        <g transform="translate(35, 65)">
+          <circle cx="20" cy="18" r="15" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+          <rect x="8" y="35" width="24" height="45" rx="8" fill="#38BDF8"/>
+        </g>
+        <g transform="translate(88, 65)">
+          <circle cx="20" cy="18" r="15" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+          <rect x="8" y="35" width="24" height="45" rx="8" fill="#34D399"/>
+        </g>
+        <g transform="translate(141, 65)">
+          <circle cx="20" cy="18" r="15" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+          <rect x="8" y="35" width="24" height="45" rx="8" fill="#F472B6"/>
+        </g>
+        <text x="110" y="42" text-anchor="middle" font-size="14" font-weight="bold" fill="#0369A1">BERATUR TERTIB 👍</text>
+      </svg>`,
+
+      // --- BAHAGIAN 2: 4 KELEBIHAN ---
+      keb1_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <path d="M60,96 C60,96 18,68 18,42 C18,27 30,18 43,18 C51,18 57,23 60,29 C63,23 69,18 77,18 C90,18 102,27 102,42 C102,68 60,96 60,96 Z" fill="#F43F5E" stroke="#BE123C" stroke-width="4"/>
+        <text x="60" y="58" text-anchor="middle" font-size="24">✨🤲✨</text>
+      </svg>`,
+      keb1_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <circle cx="160" cy="90" r="72" fill="#FFE4E6" stroke="#FB7185" stroke-width="4"/>
+        <path d="M160,145 C160,145 95,102 95,64 C95,44 112,30 130,30 C142,30 154,37 160,47 C166,37 178,30 190,30 C208,30 225,44 225,64 C225,102 160,145 160,145 Z" fill="#F43F5E" stroke="#BE123C" stroke-width="4"/>
+        <text x="160" y="84" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">DISAYANGI</text>
+        <text x="160" y="106" text-anchor="middle" font-size="16" font-weight="bold" fill="#FEF08A">ALLAH & RASUL</text>
+      </svg>`,
+
+      keb2_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#BBF7D0" stroke="#16A34A" stroke-width="4"/>
+        <rect x="24" y="56" width="72" height="26" rx="10" fill="#0EA5E9" stroke="#0369A1" stroke-width="3"/>
+        <rect x="36" y="40" width="46" height="20" rx="8" fill="#BAE6FD" stroke="#0369A1" stroke-width="3"/>
+        <circle cx="42" cy="84" r="9" fill="#1E293B"/><circle cx="78" cy="84" r="9" fill="#1E293B"/>
+        <text x="88" y="38" font-size="22">🏁</text>
+      </svg>`,
+      keb2_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Rumah Destinasi -->
+        <polygon points="215,65 255,32 295,65" fill="#F97316" stroke="#C2410C" stroke-width="3"/>
+        <rect x="225" y="65" width="60" height="65" fill="#FEF3C7" stroke="#D97706" stroke-width="3"/>
+        <rect x="246" y="95" width="18" height="35" fill="#92400E"/>
+        <!-- Kereta Tiba Selamat -->
+        <rect x="45" y="88" width="125" height="44" rx="14" fill="#38BDF8" stroke="#0284C7" stroke-width="3.5"/>
+        <rect x="65" y="62" width="80" height="30" rx="10" fill="#E0F2FE" stroke="#0284C7" stroke-width="3.5"/>
+        <circle cx="75" cy="134" r="14" fill="#1E293B"/><circle cx="142" cy="134" r="14" fill="#1E293B"/>
+        <text x="120" y="42" text-anchor="middle" font-size="16" font-weight="bold" fill="#047857">SELAMAT TIBA! ✅</text>
+      </svg>`,
+
+      keb3_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#FEF08A" stroke="#EAB308" stroke-width="4"/>
+        <circle cx="44" cy="54" r="14" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+        <path d="M39,58 Q44,63 49,58" fill="none" stroke="#1E293B" stroke-width="2.2"/>
+        <circle cx="76" cy="54" r="14" fill="#FDE68A" stroke="#D97706" stroke-width="2.5"/>
+        <path d="M71,58 Q76,63 81,58" fill="none" stroke="#1E293B" stroke-width="2.2"/>
+        <text x="60" y="92" text-anchor="middle" font-size="22">😊🤝😊</text>
+      </svg>`,
+      keb3_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Dua Kanak-kanak Tersenyum Mesra -->
+        <circle cx="115" cy="68" r="24" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <circle cx="107" cy="65" r="2.8" fill="#1E293B"/><circle cx="123" cy="65" r="2.8" fill="#1E293B"/>
+        <path d="M107,75 Q115,83 123,75" fill="none" stroke="#1E293B" stroke-width="3" stroke-linecap="round"/>
+        <rect x="92" y="95" width="46" height="58" rx="14" fill="#34D399" stroke="#059669" stroke-width="3"/>
+
+        <circle cx="205" cy="68" r="24" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <circle cx="197" cy="65" r="2.8" fill="#1E293B"/><circle cx="213" cy="65" r="2.8" fill="#1E293B"/>
+        <path d="M197,75 Q205,83 213,75" fill="none" stroke="#1E293B" stroke-width="3" stroke-linecap="round"/>
+        <rect x="182" y="95" width="46" height="58" rx="14" fill="#38BDF8" stroke="#0284C7" stroke-width="3"/>
+        <text x="160" y="42" text-anchor="middle" font-size="26">🌟😊🌟</text>
+      </svg>`,
+
+      keb4_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#DDD6FE" stroke="#7C3AED" stroke-width="4"/>
+        <text x="60" y="68" text-anchor="middle" font-size="44">🤝</text>
+      </svg>`,
+      keb4_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Kanak-kanak Membantu Warga Emas Membawa Beg -->
+        <circle cx="105" cy="65" r="21" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <path d="M86,60 C86,44 124,44 124,60" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+        <rect x="88" y="88" width="34" height="62" rx="12" fill="#A78BFA" stroke="#6D28D9" stroke-width="3"/>
+
+        <circle cx="205" cy="74" r="20" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <rect x="188" y="96" width="34" height="54" rx="12" fill="#FBBF24" stroke="#D97706" stroke-width="3"/>
+        <!-- Beg dibantu -->
+        <rect x="144" y="114" width="28" height="32" rx="6" fill="#FB923C" stroke="#C2410C" stroke-width="2.5"/>
+        <text x="158" y="44" text-anchor="middle" font-size="24">💜</text>
+      </svg>`,
+
+      // --- BAHAGIAN 3: 5 AKIBAT ---
+      aki1_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#FED7AA" stroke="#EA580C" stroke-width="4"/>
+        <rect x="24" y="44" width="34" height="20" rx="6" fill="#EF4444"/>
+        <rect x="64" y="44" width="34" height="20" rx="6" fill="#3B82F6"/>
+        <rect x="42" y="70" width="38" height="20" rx="6" fill="#EAB308"/>
+        <text x="60" y="36" text-anchor="middle" font-size="18">🚗🚕🚙</text>
+      </svg>`,
+      aki1_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <rect x="20" y="115" width="280" height="40" rx="10" fill="#475569"/>
+        <!-- Barisan Kereta Sesak -->
+        <rect x="32" y="85" width="75" height="34" rx="10" fill="#EF4444" stroke="#991B1B" stroke-width="3"/>
+        <circle cx="50" cy="122" r="10" fill="#1E293B"/><circle cx="90" cy="122" r="10" fill="#1E293B"/>
+        <rect x="122" y="85" width="75" height="34" rx="10" fill="#FACC15" stroke="#CA8A04" stroke-width="3"/>
+        <circle cx="140" cy="122" r="10" fill="#1E293B"/><circle cx="180" cy="122" r="10" fill="#1E293B"/>
+        <rect x="212" y="85" width="75" height="34" rx="10" fill="#38BDF8" stroke="#0284C7" stroke-width="3"/>
+        <circle cx="230" cy="122" r="10" fill="#1E293B"/><circle cx="270" cy="122" r="10" fill="#1E293B"/>
+        <text x="160" y="52" text-anchor="middle" font-size="18" font-weight="bold" fill="#C2410C">JALAN SESAK! 🚦</text>
+      </svg>`,
+
+      aki2_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#FBCFE8" stroke="#DB2777" stroke-width="4"/>
+        <circle cx="60" cy="62" r="24" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <circle cx="52" cy="58" r="2.8" fill="#1E293B"/><circle cx="68" cy="58" r="2.8" fill="#1E293B"/>
+        <path d="M52,72 Q60,64 68,72" fill="none" stroke="#1E293B" stroke-width="3" stroke-linecap="round"/>
+        <text x="86" y="38" font-size="22">😣</text>
+      </svg>`,
+      aki2_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Penumpang Terganggu dengan Bunyi Bising / Beg Menghalang -->
+        <circle cx="115" cy="70" r="24" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <circle cx="107" cy="67" r="2.8" fill="#1E293B"/><circle cx="123" cy="67" r="2.8" fill="#1E293B"/>
+        <path d="M107,80 Q115,72 123,80" fill="none" stroke="#1E293B" stroke-width="3"/>
+        <rect x="92" y="96" width="46" height="58" rx="14" fill="#94A3B8" stroke="#475569" stroke-width="3"/>
+        <!-- Tangan menutup telinga -->
+        <circle cx="88" cy="70" r="8" fill="#FDE68A"/><circle cx="142" cy="70" r="8" fill="#FDE68A"/>
+        <text x="220" y="85" text-anchor="middle" font-size="34">📢💢</text>
+        <text x="220" y="118" text-anchor="middle" font-size="14" font-weight="bold" fill="#991B1B">TERGANGGU!</text>
+      </svg>`,
+
+      aki3_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#FECACA" stroke="#DC2626" stroke-width="4"/>
+        <rect x="22" y="56" width="34" height="22" rx="6" fill="#3B82F6" transform="rotate(-10 38 66)"/>
+        <rect x="64" y="56" width="34" height="22" rx="6" fill="#EF4444" transform="rotate(10 80 66)"/>
+        <text x="60" y="44" text-anchor="middle" font-size="24">💥</text>
+      </svg>`,
+      aki3_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Ilustrasi Kartun Lembut Dua Kereta Terlanggar -->
+        <rect x="52" y="92" width="90" height="40" rx="12" fill="#38BDF8" stroke="#0284C7" stroke-width="3.5" transform="rotate(-5 95 110)"/>
+        <circle cx="72" cy="134" r="12" fill="#1E293B"/><circle cx="124" cy="134" r="12" fill="#1E293B"/>
+
+        <rect x="178" y="92" width="90" height="40" rx="12" fill="#F87171" stroke="#B91C1C" stroke-width="3.5" transform="rotate(5 220 110)"/>
+        <circle cx="196" cy="134" r="12" fill="#1E293B"/><circle cx="248" cy="134" r="12" fill="#1E293B"/>
+
+        <text x="160" y="75" text-anchor="middle" font-size="36">💥</text>
+        <text x="160" y="38" text-anchor="middle" font-size="16" font-weight="bold" fill="#B91C1C">HATI-HATI DI JALAN RAYA!</text>
+      </svg>`,
+
+      aki4_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <polygon points="60,18 106,96 14,96" fill="#FEF08A" stroke="#EA580C" stroke-width="5" stroke-linejoin="round"/>
+        <text x="60" y="84" text-anchor="middle" font-size="44" font-weight="bold" fill="#DC2626">!</text>
+      </svg>`,
+      aki4_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <polygon points="160,22 238,148 82,148" fill="#FEF08A" stroke="#EA580C" stroke-width="6" stroke-linejoin="round"/>
+        <text x="160" y="130" text-anchor="middle" font-size="74" font-weight="bold" fill="#DC2626">!</text>
+        <text x="275" y="95" text-anchor="middle" font-size="28">⚠️</text>
+        <text x="45" y="95" text-anchor="middle" font-size="28">⚠️</text>
+      </svg>`,
+
+      aki5_icon: `<svg viewBox="0 0 120 120" class="w-24 h-24 sm:w-28 sm:h-28">
+        <circle cx="60" cy="60" r="46" fill="#E2E8F0" stroke="#64748B" stroke-width="4"/>
+        <circle cx="60" cy="60" r="26" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <circle cx="51" cy="55" r="3" fill="#1E293B"/><circle cx="69" cy="55" r="3" fill="#1E293B"/>
+        <path d="M50,73 Q60,64 70,73" fill="none" stroke="#1E293B" stroke-width="3" stroke-linecap="round"/>
+      </svg>`,
+      aki5_visual: `<svg viewBox="0 0 320 180" class="w-full h-full">
+        <!-- Orang Sekeliling Tidak Selesa -->
+        <circle cx="115" cy="72" r="24" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <circle cx="107" cy="68" r="2.8" fill="#1E293B"/><circle cx="123" cy="68" r="2.8" fill="#1E293B"/>
+        <path d="M107,82 Q115,74 123,82" fill="none" stroke="#1E293B" stroke-width="3"/>
+        <rect x="92" y="98" width="46" height="56" rx="14" fill="#CBD5E1" stroke="#64748B" stroke-width="3"/>
+
+        <circle cx="205" cy="72" r="24" fill="#FDE68A" stroke="#D97706" stroke-width="3"/>
+        <circle cx="197" cy="68" r="2.8" fill="#1E293B"/><circle cx="213" cy="68" r="2.8" fill="#1E293B"/>
+        <path d="M197,82 Q205,74 213,82" fill="none" stroke="#1E293B" stroke-width="3"/>
+        <rect x="182" y="98" width="46" height="56" rx="14" fill="#94A3B8" stroke="#475569" stroke-width="3"/>
+        <text x="160" y="42" text-anchor="middle" font-size="24">😕👎</text>
+      </svg>`
+    };
+
+    // Struktur Data Lengkap
+    const NOTES_DATA = {
+      1: [
+        {
+          id: 'adab-1',
+          badge: 'ADAB 1',
+          shortTitle: 'Merancang Perjalanan',
+          title: 'MERANCANG PERJALANAN',
+          audioText: 'Adab satu. Merancang perjalanan.',
+          icon: SVG_ART.adab1_icon,
+          visual: SVG_ART.adab1_visual,
+          cardColor: 'border-sky-300 bg-sky-50/70'
+        },
+        {
+          id: 'adab-2',
+          badge: 'ADAB 2',
+          shortTitle: 'Membaca Basmalah',
+          title: 'MEMBACA BASMALAH',
+          audioText: 'Adab dua. Membaca Basmalah.',
+          icon: SVG_ART.adab2_icon,
+          visual: SVG_ART.adab2_visual,
+          cardColor: 'border-amber-300 bg-amber-50/70'
+        },
+        {
+          id: 'adab-3',
+          badge: 'ADAB 3',
+          shortTitle: 'Mulakan Kaki Kanan',
+          title: 'MULAKAN LANGKAH KAKI KANAN',
+          audioText: 'Adab tiga. Mulakan langkah dengan kaki kanan.',
+          icon: SVG_ART.adab3_icon,
+          visual: SVG_ART.adab3_visual,
+          cardColor: 'border-emerald-300 bg-emerald-50/70'
+        },
+        {
+          id: 'adab-4',
+          badge: 'ADAB 4',
+          shortTitle: 'Membaca Doa',
+          title: 'MEMBACA DOA MENAIKI KENDERAAN',
+          audioText: 'Adab empat. Membaca doa menaiki kenderaan.',
+          icon: SVG_ART.adab4_icon,
+          visual: SVG_ART.adab4_visual,
+          cardColor: 'border-purple-300 bg-purple-50/70'
+        },
+        {
+          id: 'adab-5',
+          badge: 'ADAB 5',
+          shortTitle: 'Berdisiplin & Berhati-hati',
+          title: 'BERDISIPLIN DAN BERHATI-HATI',
+          audioText: 'Adab lima. Berdisiplin dan berhati-hati.',
+          icon: SVG_ART.adab5_icon,
+          visual: SVG_ART.adab5_visual,
+          cardColor: 'border-orange-300 bg-orange-50/70'
+        },
+        {
+          id: 'adab-6',
+          badge: 'ADAB 6',
+          shortTitle: 'Hormat & Beri Keutamaan',
+          title: 'HORMAT DAN BERI KEUTAMAAN',
+          audioText: 'Adab enam. Hormat-menghormati dan beri keutamaan kepada yang memerlukan.',
+          icon: SVG_ART.adab6_icon,
+          visual: SVG_ART.adab6_visual,
+          cardColor: 'border-pink-300 bg-pink-50/70'
+        },
+        {
+          id: 'adab-7',
+          badge: 'ADAB 7',
+          shortTitle: 'Jaga Kebersihan',
+          title: 'JAGA KEBERSIHAN KENDERAAN',
+          audioText: 'Adab tujuh. Menjaga kebersihan dan tidak merosakkan kenderaan.',
+          icon: SVG_ART.adab7_icon,
+          visual: SVG_ART.adab7_visual,
+          cardColor: 'border-teal-300 bg-teal-50/70'
+        },
+        {
+          id: 'adab-8',
+          badge: 'ADAB 8',
+          shortTitle: 'Tidak Berebut-rebut',
+          title: 'TIDAK BEREBUT-REBUT',
+          audioText: 'Adab lapan. Tidak berebut-rebut semasa menaiki kenderaan.',
+          icon: SVG_ART.adab8_icon,
+          visual: SVG_ART.adab8_visual,
+          cardColor: 'border-cyan-300 bg-cyan-50/70'
+        }
+      ],
+      2: [
+        {
+          id: 'keb-1',
+          badge: 'KELEBIHAN 1',
+          shortTitle: 'Disayangi Allah & Rasul',
+          title: 'DISAYANGI ALLAH DAN RASULULLAH',
+          audioText: 'Kelebihan satu. Disayangi Allah dan Rasulullah.',
+          icon: SVG_ART.keb1_icon,
+          visual: SVG_ART.keb1_visual,
+          cardColor: 'border-rose-300 bg-rose-50/80'
+        },
+        {
+          id: 'keb-2',
+          badge: 'KELEBIHAN 2',
+          shortTitle: 'Selamat Tiba ke Destinasi',
+          title: 'SELAMAT TIBA KE DESTINASI',
+          audioText: 'Kelebihan dua. Selamat tiba ke destinasi dan melancarkan perjalanan.',
+          icon: SVG_ART.keb2_icon,
+          visual: SVG_ART.keb2_visual,
+          cardColor: 'border-emerald-300 bg-emerald-50/80'
+        },
+        {
+          id: 'keb-3',
+          badge: 'KELEBIHAN 3',
+          shortTitle: 'Disenangi Orang Sekeliling',
+          title: 'DISENANGI ORANG DI SEKELILING',
+          audioText: 'Kelebihan tiga. Disenangi orang di sekeliling.',
+          icon: SVG_ART.keb3_icon,
+          visual: SVG_ART.keb3_visual,
+          cardColor: 'border-amber-300 bg-amber-50/80'
+        },
+        {
+          id: 'keb-4',
+          badge: 'KELEBIHAN 4',
+          shortTitle: 'Prihatin & Toleransi',
+          title: 'MENANAM RASA PRIHATIN DAN TOLERANSI',
+          audioText: 'Kelebihan empat. Menanam rasa prihatin dan toleransi.',
+          icon: SVG_ART.keb4_icon,
+          visual: SVG_ART.keb4_visual,
+          cardColor: 'border-violet-300 bg-violet-50/80'
+        }
+      ],
+      3: [
+        {
+          id: 'aki-1',
+          badge: 'AKIBAT 1',
+          shortTitle: 'Kesesakan Lalu Lintas',
+          title: 'MENYEBABKAN KESESAKAN LALU LINTAS',
+          audioText: 'Akibat satu. Menyebabkan kesesakan lalu lintas.',
+          icon: SVG_ART.aki1_icon,
+          visual: SVG_ART.aki1_visual,
+          cardColor: 'border-orange-300 bg-orange-50/80'
+        },
+        {
+          id: 'aki-2',
+          badge: 'AKIBAT 2',
+          shortTitle: 'Menyusahkan Orang Lain',
+          title: 'MENYUSAHKAN ORANG LAIN',
+          audioText: 'Akibat dua. Menyusahkan orang lain.',
+          icon: SVG_ART.aki2_icon,
+          visual: SVG_ART.aki2_visual,
+          cardColor: 'border-pink-300 bg-pink-50/80'
+        },
+        {
+          id: 'aki-3',
+          badge: 'AKIBAT 3',
+          shortTitle: 'Menyebabkan Kemalangan',
+          title: 'MENYEBABKAN KEMALANGAN',
+          audioText: 'Akibat tiga. Menyebabkan kemalangan.',
+          icon: SVG_ART.aki3_icon,
+          visual: SVG_ART.aki3_visual,
+          cardColor: 'border-red-300 bg-red-50/80'
+        },
+        {
+          id: 'aki-4',
+          badge: 'AKIBAT 4',
+          shortTitle: 'Membahayakan Nyawa',
+          title: 'MEMBAHAYAKAN NYAWA',
+          audioText: 'Akibat empat. Membahayakan nyawa sendiri dan orang lain.',
+          icon: SVG_ART.aki4_icon,
+          visual: SVG_ART.aki4_visual,
+          cardColor: 'border-amber-400 bg-amber-50/80'
+        },
+        {
+          id: 'aki-5',
+          badge: 'AKIBAT 5',
+          shortTitle: 'Tidak Disenangi Orang',
+          title: 'TIDAK DISENANGI ORANG DI SEKELILING',
+          audioText: 'Akibat lima. Tidak disenangi orang di sekeliling.',
+          icon: SVG_ART.aki5_icon,
+          visual: SVG_ART.aki5_visual,
+          cardColor: 'border-slate-300 bg-slate-50/90'
+        }
+      ]
+    };
+
+    /* =========================================================================
+       STATE & PEMBOLEHUBAH GLOBAL
+       ========================================================================= */
+    let currentPage = 0; // 0: Intro, 1: Adab, 2: Kelebihan, 3: Akibat
+    const exploredItems = new Set(); // Menyimpan ID kad yang telah ditekan
+    let currentAudioText = '';
+    let malayVoice = null;
+
+    // Sistem Muzik Latar Sintesis (Web Audio API - Ceria, Lembut & Tanpa Fail Luaran)
+    let audioCtx = null;
+    let bgmPlaying = false;
+    let bgmTimer = null;
+    let bgmStep = 0;
+
+    /* =========================================================================
+       INISIALISASI SUARA BAHASA MELAYU (WEB SPEECH API)
+       ========================================================================= */
+    function loadVoices() {
+      if (!('speechSynthesis' in window)) return;
+      const voices = window.speechSynthesis.getVoices();
+      // Cari suara Bahasa Melayu (ms-MY atau ms) atau Bahasa Indonesia sebagai sandaran terdekat
+      malayVoice = voices.find(v => v.lang.toLowerCase().includes('ms')) ||
+                   voices.find(v => v.lang.toLowerCase().includes('id')) ||
+                   null;
+    }
+
+    if ('speechSynthesis' in window) {
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    function stopSpeech() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      const statusEl = document.getElementById('modal-audio-status');
+      if (statusEl) {
+        statusEl.innerHTML = `<span>🔈</span><span>Sedia</span>`;
+        statusEl.className = "text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700 flex items-center gap-1.5";
+      }
+    }
+
+    function speakText(text) {
+      stopSpeech();
+      currentAudioText = text;
+      const noticeEl = document.getElementById('autoplay-notice');
+      const statusEl = document.getElementById('modal-audio-status');
+
+      if (!('speechSynthesis' in window)) {
+        noticeEl.classList.remove('hidden');
+        return;
+      }
+
+      try {
+        const utterance = new SpeechSynthesisUtterance(text);
+        if (malayVoice) {
+          utterance.voice = malayVoice;
+        }
+        utterance.lang = 'ms-MY';
+        utterance.rate = 0.88; // Tidak terlalu laju, jelas untuk murid pemulihan/rendah
+        utterance.pitch = 1.08; // Nada mesra kanak-kanak
+        utterance.volume = 1.0;
+
+        let started = false;
+
+        utterance.onstart = () => {
+          started = true;
+          noticeEl.classList.add('hidden');
+          statusEl.innerHTML = `<span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span><span>Sedang Membaca...</span>`;
+          statusEl.className = "text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 flex items-center gap-1.5";
+          // Perlahan muzik latar semasa suara penerangan bercakap
+          if (bgmPlaying && masterGain) {
+            masterGain.gain.setTargetAtTime(0.015, audioCtx.currentTime, 0.1);
+          }
+        };
+
+        utterance.onend = () => {
+          statusEl.innerHTML = `<span>✅</span><span>Selesai</span>`;
+          statusEl.className = "text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-sky-100 text-sky-800 flex items-center gap-1.5";
+          if (bgmPlaying && masterGain) {
+            masterGain.gain.setTargetAtTime(0.045, audioCtx.currentTime, 0.2);
+          }
+        };
+
+        utterance.onerror = () => {
+          noticeEl.classList.remove('hidden');
+        };
+
+        window.speechSynthesis.speak(utterance);
+
+        // Semak jika pelayar menyekat autoplay selepas 600ms
+        setTimeout(() => {
+          if (!started && window.speechSynthesis.paused) {
+            noticeEl.classList.remove('hidden');
+          }
+        }, 600);
+
+      } catch (err) {
+        noticeEl.classList.remove('hidden');
+      }
+    }
+
+    function replayCurrentAudio() {
+      // Mainkan bunyi klik lembut
+      playTapSound();
+      if (currentAudioText) {
+        speakText(currentAudioText);
+      }
+    }
+
+    /* =========================================================================
+       SISTEM AUDIO KESAN BUNYI & MUZIK LATAR CERIA (WEB AUDIO API)
+       ========================================================================= */
+    let masterGain = null;
+
+    function initAudioContext() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+          audioCtx = new AudioContext();
+          masterGain = audioCtx.createGain();
+          masterGain.gain.value = 0.045; // Sangat perlahan agar tidak mengganggu suara
+          masterGain.connect(audioCtx.destination);
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playTapSound() {
+      try {
+        initAudioContext();
+        if (!audioCtx) return;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(520, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(780, audioCtx.currentTime + 0.09);
+        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.1);
+      } catch (e) {}
+    }
+
+    // Melodi Marimba Pentatonik Ceria
+    const BGM_NOTES = [523.25, 659.25, 783.99, 659.25, 587.33, 698.46, 880.00, 698.46];
+
+    function toggleBGM() {
+      initAudioContext();
+      const iconEl = document.getElementById('bgm-icon');
+      const labelEl = document.getElementById('bgm-label');
+
+      if (!bgmPlaying) {
+        bgmPlaying = true;
+        iconEl.textContent = '🎵';
+        labelEl.textContent = 'Muzik: Buka';
+        bgmTimer = setInterval(() => {
+          if (!bgmPlaying || !audioCtx) return;
+          const freq = BGM_NOTES[bgmStep % BGM_NOTES.length];
+          bgmStep++;
+          const osc = audioCtx.createOscillator();
+          const noteGain = audioCtx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          noteGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+          noteGain.gain.linearRampToValueAtTime(0.3, audioCtx.currentTime + 0.04);
+          noteGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.35);
+          osc.connect(noteGain);
+          noteGain.connect(masterGain);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.36);
+        }, 480);
+      } else {
+        bgmPlaying = false;
+        iconEl.textContent = '🔇';
+        labelEl.textContent = 'Muzik: Tutup';
+        clearInterval(bgmTimer);
+      }
+    }
+
+    /* =========================================================================
+       Pemaparan Grid Kad Interaktif
+       ========================================================================= */
+    function renderAllGrids() {
+      renderGrid(1, 'grid-adab');
+      renderGrid(2, 'grid-kelebihan');
+      renderGrid(3, 'grid-akibat');
+    }
+
+    function renderGrid(sectionNum, containerId) {
+      const container = document.getElementById(containerId);
+      const items = NOTES_DATA[sectionNum];
+
+      container.innerHTML = items.map((item) => {
+        const isDone = exploredItems.has(item.id);
+        return `
+          <button onclick="openNoteModal(${sectionNum}, '${item.id}')"
+            class="cartoon-card ${item.cardColor} p-3.5 sm:p-4 flex flex-col items-center justify-between text-center relative cursor-pointer group">
+            
+            <!-- Lencana Nombor & Tanda Semak -->
+            <div class="w-full flex items-center justify-between mb-1">
+              <span class="font-kids text-xs sm:text-sm font-bold px-2.5 py-0.5 rounded-full bg-white border-2 border-slate-300 text-slate-700">
+                ${item.badge}
+              </span>
+              <span class="w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
+                isDone
+                  ? 'bg-emerald-500 text-white shadow-sm scale-110'
+                  : 'bg-white/80 text-slate-300 border-2 border-dashed border-slate-300'
+              }">
+                ${isDone ? '✓' : '?'}
+              </span>
+            </div>
+
+            <!-- Ikon Kartun Besar -->
+            <div class="my-1 transform group-hover:scale-105 transition-transform duration-200">
+              ${item.icon}
+            </div>
+
+            <!-- Tajuk Pendek Sahaja (Penerangan tersembunyi sehingga ditekan) -->
+            <h3 class="font-kids text-base sm:text-lg font-bold text-slate-800 leading-tight mt-1">
+              ${item.shortTitle}
+            </h3>
+
+            <span class="mt-2 text-[11px] sm:text-xs font-bold text-sky-700 bg-white/90 px-3 py-1 rounded-full border border-sky-200">
+              👆 Tekan Lihat
+            </span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    /* =========================================================================
+       KAWALAN MODAL POP-UP KAD NOTA
+       ========================================================================= */
+    function openNoteModal(sectionNum, itemId) {
+      playTapSound();
+      const item = NOTES_DATA[sectionNum].find(i => i.id === itemId);
+      if (!item) return;
+
+      // Tandakan telah diterokai
+      const firstTime = !exploredItems.has(item.id);
+      exploredItems.add(item.id);
+
+      // Kemas kini paparan grid supaya tanda semak (✓) muncul
+      renderAllGrids();
+      updateProgressUI();
+
+      // Isi kandungan modal
+      document.getElementById('modal-badge').textContent = item.badge;
+      document.getElementById('modal-title').textContent = item.title;
+      document.getElementById('modal-visual').innerHTML = item.visual;
+
+      // Paparkan modal
+      const modal = document.getElementById('note-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      // Mainkan audio penerangan secara automatik
+      speakText(item.audioText);
+
+      // Berikan maklum balas positif jika item baru diterokai
+      if (firstTime) {
+        showPositiveFeedback();
+      }
+    }
+
+    function closeModal() {
+      playTapSound();
+      stopSpeech();
+      const modal = document.getElementById('note-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function closeModalOnBackdrop(event) {
+      if (event.target.id === 'note-modal') {
+        closeModal();
+      }
+    }
+
+    function showPositiveFeedback() {
+      const praises = [
+        '⭐ Bagus! Teruskan!',
+        '👏 Hebat! Kamu sudah baca!',
+        '🌟 Syabas Musafir Cilik!',
+        '🎉 Pandai! Jom tengok lagi!'
+      ];
+      const toast = document.getElementById('positive-toast');
+      toast.textContent = praises[exploredItems.size % praises.length];
+      toast.classList.remove('hidden');
+      clearTimeout(toast._timer);
+      toast._timer = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2200);
+    }
+
+    /* =========================================================================
+       NAVIGASI HALAMAN & PENUNJUK KEMAJUAN
+       ========================================================================= */
+    function startLearning() {
+      playTapSound();
+      // Hidupkan muzik latar lembut secara automatik apabila murid mula berinteraksi
+      if (!bgmPlaying) {
+        toggleBGM();
+      }
+      goToPage(1);
+    }
+
+    function goToPage(pageNum) {
+      stopSpeech();
+      closeModal();
+      currentPage = pageNum;
+
+      // Sembunyikan semua halaman
+      for (let i = 0; i <= 3; i++) {
+        const sec = document.getElementById(`page-${i}`);
+        sec.classList.add('hidden');
+        sec.classList.remove('flex');
+      }
+
+      // Paparkan halaman dipilih
+      const target = document.getElementById(`page-${pageNum}`);
+      target.classList.remove('hidden');
+      target.classList.add('flex');
+
+      // Kawal keterlihatan bar kemajuan & navigasi bawah
+      const progressContainer = document.getElementById('progress-container');
+      const bottomNav = document.getElementById('bottom-nav');
+      const btnHomeTop = document.getElementById('btn-home-top');
+
+      if (pageNum === 0) {
+        progressContainer.classList.add('hidden');
+        bottomNav.classList.add('hidden');
+        btnHomeTop.classList.add('hidden');
+        btnHomeTop.classList.remove('flex');
+      } else {
+        progressContainer.classList.remove('hidden');
+        bottomNav.classList.remove('hidden');
+        btnHomeTop.classList.remove('hidden');
+        btnHomeTop.classList.add('flex');
+      }
+
+      updateProgressUI();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function prevPage() {
+      playTapSound();
+      if (currentPage > 0) {
+        goToPage(currentPage - 1);
+      }
+    }
+
+    function nextPage() {
+      playTapSound();
+      if (currentPage < 3) {
+        goToPage(currentPage + 1);
+      } else {
+        goToPage(0);
+      }
+    }
+
+    function updateProgressUI() {
+      if (currentPage === 0) return;
+
+      const sectionNames = {
+        1: 'Bahagian 1 / 3: 8 Adab Kenderaan',
+        2: 'Bahagian 2 / 3: Kelebihan Beradab',
+        3: 'Bahagian 3 / 3: Akibat Tidak Beradab'
+      };
+
+      const progressPercent = {
+        1: '33%',
+        2: '66%',
+        3: '100%'
+      };
+
+      document.getElementById('section-indicator').textContent = sectionNames[currentPage];
+      document.getElementById('progress-bar').style.width = progressPercent[currentPage];
+
+      // Kira bilangan kad yang telah diterokai dalam bahagian semasa
+      const currentItems = NOTES_DATA[currentPage];
+      const doneInSection = currentItems.filter(item => exploredItems.has(item.id)).length;
+      document.getElementById('explored-counter').textContent = `Diterokai: ${doneInSection} / ${currentItems.length}`;
+
+      // Label butang Seterusnya di halaman terakhir
+      const nextLabel = document.getElementById('btn-next-label');
+      if (currentPage === 3) {
+        nextLabel.textContent = 'Tamat & Menu';
+      } else {
+        nextLabel.textContent = 'Seterusnya';
+      }
+
+      // Paparkan sepanduk tahniah jika semua 17 nota telah diterokai
+      const totalItems = 8 + 4 + 5;
+      const banner = document.getElementById('completion-banner');
+      if (exploredItems.size >= totalItems) {
+        banner.classList.remove('hidden');
+      }
+    }
+
+    // Mulakan paparan semasa halaman dimuatkan
+    window.onload = function() {
+      renderAllGrids();
+    };
+  </script>
+</body>
+</html>
